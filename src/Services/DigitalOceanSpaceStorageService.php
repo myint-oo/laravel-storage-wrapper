@@ -78,11 +78,6 @@ class DigitalOceanSpaceStorageService implements StorageServiceInterface
         return Storage::disk($this->driver)->url($of);
     }
 
-    public function baseUrl(): string
-    {
-        return config('filesystem.space.url');
-    }
-
     public function delete(string|array $from): bool
     {
         return Storage::disk($this->driver)->delete($from);

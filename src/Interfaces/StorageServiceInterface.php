@@ -35,8 +35,6 @@ interface StorageServiceInterface
 
     public function url(string $of): string;
 
-    public function baseUrl(): string;
-
     /*
     |--------------------------------------------------------------------------
     | DELETE
