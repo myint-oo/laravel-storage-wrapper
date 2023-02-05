@@ -1,6 +1,7 @@
 {
     "name": "myint-oo/laravel-storage-wrapper",
     "description": "A wrapper for laravel storage using interface. A small package meant to solve having to do all the for cloud storage setup work in each of the projects",
+    "license": "MIT",
     "authors": [
         {
             "name": "TheMyintOo",
