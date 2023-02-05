@@ -1,11 +1,10 @@
 <?php
 
-namespace MyintOo\LaravelStorageWrapper\Services;
+namespace MyintOo\LaravelStorageWrapper\Drivers;
 
-use MyintOo\LaravelStorageWrapper\Interfaces\StorageServiceInterface;
-use Storage;
+use MyintOo\LaravelStorageWrapper\Interfaces\StorageDriverInterface;
 
-class DigitalOceanSpaceStorageService implements StorageServiceInterface
+class DigitalOceanSpaceStorageDriver implements StorageDriverInterface
 {
     private string $driver;
 
@@ -25,7 +24,7 @@ class DigitalOceanSpaceStorageService implements StorageServiceInterface
 
         $options['visibility'] = isset($options['visibility']) ? $options['visibility'] : 'public';
 
-        return Storage::disk($this->driver)->put($in, $contents, $options);
+        return \Storage::disk($this->driver)->put($in, $contents, $options);
     }
 
     /** alias of @put */
@@ -54,7 +53,7 @@ class DigitalOceanSpaceStorageService implements StorageServiceInterface
 
     public function allDirectories(string|null $from = null): array
     {
-        return Storage::disk($this->driver)->allDirectories($from);
+        return \Storage::disk($this->driver)->allDirectories($from);
     }
 
     /** alias of @allDirectories method */
@@ -65,22 +64,22 @@ class DigitalOceanSpaceStorageService implements StorageServiceInterface
 
     public function allFiles(string|null $from = null): array
     {
-        return Storage::disk($this->driver)->allFiles($from);
+        return \Storage::disk($this->driver)->allFiles($from);
     }
 
     public function files($from = null, $recursive = false): array
     {
-        return Storage::disk($this->driver)->files($from, $recursive);
+        return \Storage::disk($this->driver)->files($from, $recursive);
     }
 
     public function url(string $of): string
     {
-        return Storage::disk($this->driver)->url($of);
+        return \Storage::disk($this->driver)->url($of);
     }
 
     public function delete(string|array $from): bool
     {
-        return Storage::disk($this->driver)->delete($from);
+        return \Storage::disk($this->driver)->delete($from);
     }
 
     /** alias of @delete method */
@@ -91,7 +90,7 @@ class DigitalOceanSpaceStorageService implements StorageServiceInterface
 
     public function deleteDirectory(string $from): bool
     {
-        return Storage::disk($this->driver)->delete($from);
+        return \Storage::disk($this->driver)->delete($from);
     }
 
     /** alias of @deleteDirectory method */

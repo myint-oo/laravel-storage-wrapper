@@ -2,7 +2,7 @@
 
 namespace MyintOo\LaravelStorageWrapper\Interfaces;
 
-interface StorageServiceInterface
+interface StorageDriverInterface
 {
     /*
     |--------------------------------------------------------------------------

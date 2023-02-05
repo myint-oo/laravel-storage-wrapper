@@ -3,7 +3,7 @@
 namespace MyintOo\LaravelStorageWrapper\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use MyintOo\LaravelStorageWrapper\Interfaces\StorageServiceInterface;
+use MyintOo\LaravelStorageWrapper\Interfaces\StorageDriverInterface;
 
 class LaravelStorageWrapperServiceProvider extends ServiceProvider
 {
@@ -13,6 +13,6 @@ class LaravelStorageWrapperServiceProvider extends ServiceProvider
             __DIR__.'/../config/laravel-storage-wrapper.php' => config_path('laravel-storage-wrapper.php'),
         ], 'laravel-storage-wrapper');
 
-        $this->app->bind(StorageServiceInterface::class, config('laravel-storage-wrapper.service-class'));
+        $this->app->bind(StorageDriverInterface::class, config('laravel-storage-wrapper.service-class'));
     }
 }

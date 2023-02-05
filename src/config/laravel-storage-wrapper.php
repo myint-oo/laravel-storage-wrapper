@@ -1,6 +1,6 @@
 <?php
 
-use MyintOo\LaravelStorageWrapper\Services\DigitalOceanSpaceStorageService;
+use MyintOo\LaravelStorageWrapper\Drivers\DigitalOceanSpaceStorageDriver;
 
 return [
 
@@ -17,6 +17,6 @@ return [
     | Service implementation to use for the storage interface
     |--------------------------------------------------------------------------
     */
-    'service-class' => env('LARAVEL_STORAGE_WRAPPER_SERVICE_CLASS', DigitalOceanSpaceStorageService::class)
+    'service-class' => env('LARAVEL_STORAGE_WRAPPER_SERVICE_CLASS', DigitalOceanSpaceStorageDriver::class)
 
 ];
