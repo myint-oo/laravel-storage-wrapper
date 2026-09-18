@@ -17,7 +17,7 @@ interface StorageDriverInterface
     /** alias of @put method */
     public function uploadFile(string $in, \Illuminate\Http\File|\Illuminate\Http\UploadedFile|string $contents, mixed $options = []): bool;
 
-    public function deleteOldAndUploadNew(string $from, \Illuminate\Http\File|\Illuminate\Http\UploadedFile|string $contents, string $in = null, mixed $options = []): bool;
+    public function deleteOldAndUploadNew(string $from, \Illuminate\Http\File|\Illuminate\Http\UploadedFile|string $contents, ?string $in = null, mixed $options = []): bool;
 
     /*
     |--------------------------------------------------------------------------

@@ -39,7 +39,7 @@ class DigitalOceanSpaceStorageDriver implements StorageDriverInterface
         return $this->put($in, $contents, $options);
     }
 
-    public function deleteOldAndUploadNew(string $from, \Illuminate\Http\File|\Illuminate\Http\UploadedFile|string $contents, string $in = null, mixed $options = []): bool
+    public function deleteOldAndUploadNew(string $from, \Illuminate\Http\File|\Illuminate\Http\UploadedFile|string $contents, ?string $in = null, mixed $options = []): bool
     {
         $this->deleteFile($from);
 
